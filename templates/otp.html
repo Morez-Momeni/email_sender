@@ -1,62 +1,214 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>کد تأیید</title>
+    <title>Verification Code</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #080808;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+        }
+
+        .wrapper {
+            width: 100%;
+            padding: 50px 15px;
+            background: #080808;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto;
+            background: #101010;
+            border: 1px solid #222222;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .top-line {
+            height: 2px;
+            background: #c9a227;
+        }
+
+        .content {
+            padding: 42px 35px;
+            text-align: center;
+        }
+
+        .brand {
+            margin-bottom: 35px;
+            color: #c9a227;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .title {
+            margin: 0;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .description {
+            margin: 12px auto 0;
+            max-width: 330px;
+            color: #777777;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .code-box {
+            margin: 28px 0 16px;
+            padding: 18px 10px;
+            background: #0b0b0b;
+            border: 1px solid #292929;
+            border-radius: 10px;
+        }
+
+        .code {
+            color: #d4af37;
+            font-family: "Courier New", monospace;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 9px;
+        }
+
+        .expiration {
+            color: #555555;
+            font-size: 11px;
+        }
+
+        .expiration span {
+            color: #9b7b1e;
+        }
+
+        .divider {
+            height: 1px;
+            margin: 30px 0;
+            background: #202020;
+        }
+
+        .notice {
+            color: #666666;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .support {
+            margin-top: 22px;
+            font-size: 11px;
+            color: #555555;
+        }
+
+        .support a {
+            color: #b99732;
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #3f3f3f;
+            font-size: 10px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .wrapper {
+                padding: 25px 10px;
+            }
+
+            .content {
+                padding: 35px 22px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .code {
+                font-size: 26px;
+                letter-spacing: 7px;
+            }
+        }
+    </style>
 </head>
-<body style="margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#0b0b2b; direction:rtl;">
 
-   
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:linear-gradient(145deg, #0b0b2b, #1a1a4e, #2d1b69); padding:40px 0;">
-        <tr>
-            <td align="center">
-                <table width="100%" max-width="480" cellpadding="0" cellspacing="0" border="0" style="background:rgba(255,255,255,0.06); backdrop-filter:blur(16px); border-radius:32px; border:1px solid rgba(255,255,255,0.08); padding:40px 30px; max-width:480px; width:100%; box-shadow:0 30px 60px rgba(0,0,0,0.6);">
-                    <tr>
-                        <td align="center">
-                            <table cellpadding="0" cellspacing="0" border="0" style="background:rgba(108,99,255,0.12); border-radius:50%; width:76px; height:76px; text-align:center; margin:0 auto 16px;">
-                                <tr>
-                                    <td align="center" style="font-size:44px; color:#6c63ff; vertical-align:middle;">
-                                        &#128231;
-                                    </td>
-                                </tr>
-                            </table>
+<body>
 
-                            <h1 style="color:#ffffff; font-size:24px; font-weight:600; margin:0 0 6px;">
-                                کد تأیید ورود
-                            </h1>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="wrapper">
 
-                            <p style="color:rgba(255,255,255,0.5); font-size:14px; margin:0 0 22px; line-height:1.6;">
-                            </p>
+            <table
+                width="100%"
+                cellpadding="0"
+                cellspacing="0"
+                border="0"
+                class="container"
+            >
+                <tr>
+                    <td class="top-line"></td>
+                </tr>
 
-                            <table cellpadding="0" cellspacing="0" border="0" style="background:rgba(255,255,255,0.05); border-radius:16px; border:2px solid rgba(108,99,255,0.3); padding:18px 28px; margin:10px auto 25px; display:inline-block;">
-                                <tr>
-                                    <td align="center" style="font-size:34px; font-weight:700; color:#ffffff; letter-spacing:12px; direction:ltr; font-family:monospace;">
-                                        zahra : my love
-                                    </td>
-                                </tr>
-                            </table>
+                <tr>
+                    <td class="content">
 
-                            <hr style="border:none; border-top:1px solid rgba(255,255,255,0.06); margin:20px 0;">
+                        <div class="brand">
+                            YOURAPP
+                        </div>
 
-                            <p style="color:rgba(255,255,255,0.35); font-size:13px; margin:0 0 10px; line-height:1.6;">
-                                اگر این درخواست را شما ارسال نکرده‌اید، لطفاً این ایمیل را نادیده بگیرید.
-                            </p>
+                        <h1 class="title">
+                            Verification Code
+                        </h1>
 
-                            <p style="color:rgba(255,255,255,0.3); font-size:13px; margin:0;">
-                                نیاز به کمک؟ <a href="#" style="color:#6c63ff; text-decoration:none;">تماس با پشتیبانی</a>
-                            </p>
+                        <p class="description">
+                            Enter the following code to continue
+                            signing in to your account.
+                        </p>
 
-                            <p style="color:rgba(255,255,255,0.2); font-size:12px; margin-top:25px; direction:ltr;">
-                                &copy; 2026 YourApp. All rights reserved.
-                            </p>
+                        <div class="code-box">
+                            <div class="code">
+                                123456
+                            </div>
+                        </div>
 
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+                        <div class="expiration">
+                            This code expires in
+                            <span>10 minutes</span>.
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="notice">
+                            If you did not request this code,
+                            you can safely ignore this email.
+                        </div>
+
+                        <div class="support">
+                            Need help?
+                            <a href="#">
+                                Contact Support
+                            </a>
+                        </div>
+
+                        <div class="footer">
+                            © 2026 YOURAPP. All rights reserved.
+                        </div>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
