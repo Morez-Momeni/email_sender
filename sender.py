@@ -40,5 +40,9 @@ def send_group_email(subject: str, body: str):
             if reciver:
                 send_email(reciver,subject,body)
 
-
-send_group_email("code for login:","code")
+def show_recivers_email():
+    with open("emails.txt","r") as file:
+        for email in file:
+            reciver = email.strip()
+            if reciver:
+                print(f"Email: {email}")
