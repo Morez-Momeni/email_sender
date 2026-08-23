@@ -83,6 +83,10 @@ if args.html:
     console.print(Panel.fit("SEND GROUPE HTML EMAIL", style="bold green"))
     path = "/home/morez/Projects/email_sender/templates/"
     templates = os.listdir("/home/morez/Projects/email_sender/templates")
+
+    subject = Prompt.ask("Enter subject")
+    body = Prompt.ask("Enter body")
+
     table = Table(title="TEMPLATES" , style="blue")
     table.add_column("ID" , style= "red")
     table.add_column("TEMPLATE" , style="green")
@@ -90,9 +94,6 @@ if args.html:
         table.add_row(str(id) , temp)
     console.print(table)
 
-    
-    subject = Prompt.ask("Enter subject")
-    body = Prompt.ask("Enter body")
     html = Prompt.ask("choose your template")
     path += html
     send_group_html_email(subject,body,path)
