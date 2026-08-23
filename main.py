@@ -1,6 +1,11 @@
 import subprocess
 import argparse
+from rich.console import Console
+from rich.panel import Panel
+from rich.prompt import Prompt
 from sender import send_group_email, show_recivers_email, add_email, send_email
+
+console = Console()
 
 parser = argparse.ArgumentParser(
     description="Command-line tool for managing and sending group emails"
@@ -40,8 +45,9 @@ parser.add_argument(
 args = parser.parse_args()
 
 if args.g:
-    subject = input("Enter subject: ").strip()
-    body = input("Enter body: ").strip()
+    console.print(Panel.fit("SEND GROUPE EMAIL", style="bold RED"))
+    subject = Prompt.ask("Enter subject")
+    body = Prompt.ask("Enter body")
     send_group_email(subject, body)
 
 if args.show:
@@ -54,7 +60,8 @@ if args.edit:
     subprocess.run(["nano", "emails.txt"])
 
 if args.s:
-    reciver = input("Enter Email:").strip()
-    subject = input("Enter subject: ").strip()
-    body = input("Enter body: ").strip()
+    console.print(Panel.fit("SEND SINGLE EMAIL", style="bold cyan"))
+    reciver = Prompt.ask("Enter Email")
+    subject = Prompt.ask("Enter subject")
+    body = Prompt.ask("Enter body")
     send_email(reciver,subject,body)

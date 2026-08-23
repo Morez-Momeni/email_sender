@@ -1,8 +1,11 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from rich.console import Console
+from rich.table import Table
 from config import sender_email,smtp_port,smtp_server,app_password
 
+console = Console()
 
 def add_email(email: str) -> bool:
     try:
@@ -41,8 +44,13 @@ def send_group_email(subject: str, body: str):
                 send_email(reciver,subject,body)
 
 def show_recivers_email():
+    table = Table(title="EMAILS" , style="bright_blue")
+    table.add_column("ID", style="red")
+    table.add_column("Email", style="white")
+
     with open("emails.txt","r") as file:
-        for email in file:
+        for id ,email in enumerate(file,start=1):
             reciver = email.strip()
             if reciver:
-                print(f"Email: {email}")
+                table.add_row(str(id), email)
+        console.print(table)
