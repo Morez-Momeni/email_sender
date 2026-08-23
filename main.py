@@ -1,9 +1,11 @@
+import os
 import subprocess
 import argparse
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
-from sender import send_group_email, show_recivers_email, add_email, send_email
+from rich.table import Table
+from sender import send_group_email, show_recivers_email, add_email, send_email,send_group_html_email
 
 console = Console()
 
@@ -41,6 +43,16 @@ parser.add_argument(
     help="Add a new email address to the end of emails.txt (e.g., --add user@example.com)"
 )
 
+parser.add_argument(
+
+    "--html",
+    action="store_true",
+    help="send group email with html template"
+
+
+)
+
+
 
 args = parser.parse_args()
 
@@ -65,3 +77,22 @@ if args.s:
     subject = Prompt.ask("Enter subject")
     body = Prompt.ask("Enter body")
     send_email(reciver,subject,body)
+
+
+if args.html:
+    console.print(Panel.fit("SEND GROUPE HTML EMAIL", style="bold green"))
+    path = "/home/morez/Projects/email_sender/templates/"
+    templates = os.listdir("/home/morez/Projects/email_sender/templates")
+    table = Table(title="TEMPLATES" , style="blue")
+    table.add_column("ID" , style= "red")
+    table.add_column("TEMPLATE" , style="green")
+    for id , temp in enumerate(templates , start=1):
+        table.add_row(str(id) , temp)
+    console.print(table)
+
+    
+    subject = Prompt.ask("Enter subject")
+    body = Prompt.ask("Enter body")
+    html = Prompt.ask("choose your template")
+    path += html
+    send_group_html_email(subject,body,path)
