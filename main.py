@@ -6,7 +6,7 @@ from rich.panel import Panel
 from rich.prompt import Prompt
 from rich.table import Table
 from sender import send_group_email, show_recivers_email, add_email, send_email,send_group_html_email
-
+from receiver import receive_last_email
 console = Console()
 
 parser = argparse.ArgumentParser(
@@ -49,6 +49,14 @@ parser.add_argument(
     action="store_true",
     help="send group email with html template"
 
+
+)
+
+parser.add_argument(
+
+    "--recieve",
+    action="store_true",
+    help="Recive your last Email"
 
 )
 
@@ -97,3 +105,8 @@ if args.html:
     html = Prompt.ask("choose your template")
     path += html
     send_group_html_email(subject,body,path)
+
+
+
+if args.recieve:
+    receive_last_email()

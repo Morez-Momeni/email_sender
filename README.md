@@ -236,18 +236,18 @@ Instead of creating a large graphical interface, the application keeps the workf
         │ Command Parsing  │
         └────────┬─────────┘
                  │
-       ┌─────────┼─────────┬──────────┐
+       ┌─────────┼─────────┬──────────┬──────────────┐
+       │         │         │          │              │
+      -g        -s      --html   --receive      --show
+       │         │         │          │              │
+       ▼         ▼         ▼          ▼              ▼
+    Group     Single    HTML      Inbox        Show
+     Send      Send      Send     Fetcher    Recipients
        │         │         │          │
-      -g        -s      --html    --show
-       │         │         │          │
-       ▼         ▼         ▼          ▼
-    Group     Single    HTML      Show
-     Send      Send      Send    Recipients
-       │         │         │
-       └─────────┼─────────┘
-                 │
-                 ▼
-           Recipients
+       └─────────┼─────────┘          │
+                 │                    │
+                 ▼                    ▼
+           Recipients            Latest emails
                  │
                  ▼
            Email SMTP
@@ -279,6 +279,7 @@ Make sure `.env` is included in `.gitignore`:
 - [x] Edit recipients with Nano
 - [x] CLI argument parsing
 - [x] HTML email selection from CLI
+- [x] Fetch and display latest received emails (IMAP)
 - [ ] Attachment support
 - [ ] Improved logging
 - [ ] Scheduled sending
