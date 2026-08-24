@@ -1,4 +1,4 @@
 .env
 .venv
 emails.txt
-/__pycache__
+__pycache__/
