@@ -1,4 +1,5 @@
 .env
 .venv
-__pycache__/config.cpython-314.pyc
 emails.txt
+__pycache__/receiver.cpython-314.pyc
+__pycache__/config.cpython-314.pyc
