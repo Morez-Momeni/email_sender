@@ -442,22 +442,21 @@ Instead of creating a large graphical interface, the application keeps the workf
 
 The user interacts with the application through commands:
 
-```text
--g
-    Group Send
--s
-    Single Send
---html
-    HTML Send
---recieve
-    Inbox Fetcher
---add EMAIL
-    Add Recipient
---show
-    Show Recipients
---edit
-    Edit Recipients
-```
+## Command 
+
+| Command       | Description                                  |
+| ------------- | -------------------------------------------- |
+| `-g`          | Send an email to the saved recipient group   |
+| `-s`          | Send an email to a single recipient          |
+| `--html`      | Send an HTML email using a template          |
+| `--recieve`   | Fetch and display received emails using IMAP |
+| `--add EMAIL` | Add an email address to the recipient list   |
+| `--show`      | Show saved recipients                        |
+| `--edit`      | Open the recipient file with Nano            |
+| `--help`      | Show CLI help                                |
+
+---
+
 
 Each command maps to a specific part of the email workflow while keeping the application lightweight.
 
